@@ -7,4 +7,10 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+  padding: 15px;
+`;
+
+export const StyledNav = styled.nav`
+  display: flex;
+  flex-direction: column;
 `;

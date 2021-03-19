@@ -1,7 +1,7 @@
 import React from 'react';
 import { users } from 'data/users';
 import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
-import { Wrapper, StyledList } from './UserList.styles';
+import { Wrapper, StyledList } from './UsersList.styles';
 
 const mockAPI = (success) => {
   return new Promise((resolve, reject) => {
