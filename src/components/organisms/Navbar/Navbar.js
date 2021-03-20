@@ -9,10 +9,10 @@ const Navbar = () => {
           Study <br /> Buddy
         </h1>
       </StyledTitle>
-      <StyledLink to="/">Dashboard</StyledLink>
+      <StyledLink exact to="/">
+        Dashboard
+      </StyledLink>
       <StyledLink to="/add-user">Add user</StyledLink>
-      <StyledLink to="/">Settings</StyledLink>
-      <StyledLink to="/">Logout</StyledLink>
     </Wrapper>
   );
 };
