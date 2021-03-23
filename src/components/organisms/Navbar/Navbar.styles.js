@@ -9,6 +9,8 @@ export const Wrapper = styled.nav`
   width: 100%;
   border-right: 1px solid ${({ theme }) => theme.colors.darkPurple};
   padding: 30px 0;
+  grid-row: 1 / 3;
+  grid-column: 1 / 1;
 `;
 
 export const StyledTitle = styled.div`
