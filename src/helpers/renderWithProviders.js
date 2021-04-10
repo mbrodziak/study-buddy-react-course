@@ -7,7 +7,7 @@ import UserProvider from 'providers/UsersProvider';
 export const renderWithProviders = (children) => {
   return render(
     <ThemeProvider theme={theme}>
-      <UserProvider>{children}</UserProvider>
+      <UsersProvider>{children}</UsersProvider>
     </ThemeProvider>
   );
 };
