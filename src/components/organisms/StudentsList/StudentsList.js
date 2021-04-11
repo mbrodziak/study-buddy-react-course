@@ -1,11 +1,11 @@
 import React from 'react';
-import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
-import { StyledList } from './UsersList.styles';
+import StudentsListItem from 'components/molecules/StudentsListItem/StudentsListItem';
+import { StyledList } from './StudentsList.styles';
 import { Title } from 'components/atoms/Title/Title';
 import { useStudents } from 'hooks/useStudents';
 import { useParams } from 'react-router';
 
-const UsersList = () => {
+const StudentsList = () => {
   const { id } = useParams();
   const { students } = useStudents({ groupId: id });
 
@@ -14,11 +14,11 @@ const UsersList = () => {
       <Title>Students list</Title>
       <StyledList>
         {students.map((userData) => (
-          <UsersListItem userData={userData} key={userData.name} />
+          <StudentsListItem userData={userData} key={userData.name} />
         ))}
       </StyledList>
     </>
   );
 };
 
-export default UsersList;
+export default StudentsList;

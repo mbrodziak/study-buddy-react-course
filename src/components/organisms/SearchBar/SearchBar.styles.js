@@ -19,7 +19,7 @@ export const SearchBarWrapper = styled.div`
 `;
 
 export const StatusInfo = styled.div`
-  color: ${({ theme }) => theme.colors.darkGray};
+  color: ${({ theme }) => theme.colors.darkGrey};
   font-size: ${({ theme }) => theme.fontSize.l};
   margin-right: 40px;
 
@@ -31,6 +31,7 @@ export const StatusInfo = styled.div`
 export const SearchWrapper = styled.div`
   position: relative;
 `;
+
 export const SearchResults = styled.ul`
   z-index: 1000;
   max-height: 500px;

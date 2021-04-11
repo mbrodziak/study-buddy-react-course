@@ -10,7 +10,6 @@ const Navbar = () => {
         </h1>
       </StyledTitle>
       <StyledLink to="/group">Dashboard</StyledLink>
-      <StyledLink to="/add-user">Add user</StyledLink>
     </Wrapper>
   );
 };
