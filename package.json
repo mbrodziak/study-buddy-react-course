@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "D": "^1.0.0",
+    "downshift": "^6.1.2",
     "lodash.debounce": "^4.0.8",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
