@@ -4,11 +4,15 @@ import { useParams, Redirect, Link } from 'react-router-dom';
 import { Wrapper, GroupWrapper, TitleWrapper } from 'views/Dashboard.styles';
 import { useStudents } from 'hooks/useStudents';
 import { Title } from 'components/atoms/Title/Title';
+import useModal from 'components/organisms/Modal/useModal';
+import StudentsDetails from 'components/molecules/StudentsDetails/StudentsDetails';
 
 const Dashboard = () => {
   const [groups, setGroups] = useState([]);
-  const { getGroups } = useStudents();
+  const [currentStudent, setCurrentStudent] = useState([]);
+  const { getGroups, getStudentsById } = useStudents();
   const { id } = useParams();
+  const { Modal, isOpen, handleOpenModal, handleCloseModal } = useModal();
 
   useEffect(() => {
     (async () => {
@@ -16,6 +20,12 @@ const Dashboard = () => {
       setGroups(groups);
     })();
   }, [getGroups]);
+
+  const handleOpenStudentDetails = async (id) => {
+    const student = await getStudentsById(id);
+    setCurrentStudent(student);
+    handleOpenModal();
+  };
 
   if (!id && groups.length > 0) return <Redirect to={`/group/${groups[0]}`} />;
 
@@ -32,7 +42,12 @@ const Dashboard = () => {
         </nav>
       </TitleWrapper>
       <GroupWrapper>
-        <StudentsList />
+        <StudentsList handleOpenStudentDetails={handleOpenStudentDetails} />
+        {isOpen ? (
+          <Modal handleClose={handleCloseModal}>
+            <StudentsDetails student={currentStudent} />
+          </Modal>
+        ) : null}
       </GroupWrapper>
     </Wrapper>
   );
