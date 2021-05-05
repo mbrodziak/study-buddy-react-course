@@ -16,20 +16,14 @@ const StudentsDetails = ({ student }) => {
       <Title>{student.name}</Title>
       <StyledDetails>
         <StyledLabel>Course:</StyledLabel>
-        <StyledInfo isBig>Economy and finances </StyledInfo>
+        <StyledInfo isBig>{student.course}</StyledInfo>
         <StyledLabel>Average grades:</StyledLabel>
-        <StyledSubjectInfo>
-          <StyledInfo>Modern Economy</StyledInfo>
-          <StyledAverage average={'3.4'}>3.4</StyledAverage>
-        </StyledSubjectInfo>
-        <StyledSubjectInfo>
-          <StyledInfo>Trade and Logistic</StyledInfo>
-          <StyledAverage average={'4.1'}>4.1</StyledAverage>
-        </StyledSubjectInfo>
-        <StyledSubjectInfo>
-          <StyledInfo>Buisness Philosophy</StyledInfo>
-          <StyledAverage average={'5.0'}>5.0</StyledAverage>
-        </StyledSubjectInfo>
+        {student.grades.map(({ subject, average }) => (
+          <StyledSubjectInfo key={subject}>
+            <StyledInfo>{subject}</StyledInfo>
+            <StyledAverage average={average}>{average}</StyledAverage>
+          </StyledSubjectInfo>
+        ))}
       </StyledDetails>
     </Wrapper>
   );

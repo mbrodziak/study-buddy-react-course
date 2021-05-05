@@ -5,7 +5,7 @@ import { StyledAverage } from './Average.styles';
 const Average = ({ average }) => <StyledAverage average={average}>{average}</StyledAverage>;
 
 Average.propTypes = {
-  average: PropTypes.string.isRequired,
+  average: PropTypes.number.isRequired,
 };
 
 export default Average;
