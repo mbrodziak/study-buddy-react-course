@@ -10,6 +10,9 @@ const Navbar = () => {
         </h1>
       </StyledTitle>
       <StyledLink to="/group">Dashboard</StyledLink>
+      <StyledLink as="a" onClick={() => localStorage.removeItem('token')}>
+        Login
+      </StyledLink>
     </Wrapper>
   );
 };
