@@ -32,6 +32,7 @@ export const StyledTitle = styled.div`
 
 const activeClassName = 'active-link';
 export const StyledLink = styled(NavLink).attrs({ activeClassName })`
+  cursor: pointer;
   color: ${({ theme }) => theme.colors.darkGrey};
   font-weight: bold;
   text-decoration: none;
