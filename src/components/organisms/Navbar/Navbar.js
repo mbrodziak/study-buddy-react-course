@@ -14,7 +14,7 @@ const Navbar = () => {
       </StyledTitle>
       <StyledLink to="/group">Dashboard</StyledLink>
       <StyledLink as="a" onClick={auth.signOut}>
-        Login
+        Logout
       </StyledLink>
     </Wrapper>
   );
