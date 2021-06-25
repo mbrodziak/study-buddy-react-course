@@ -44,7 +44,7 @@ const UnauthenticationApp = () => {
       {errors.login && <span>Login is required</span>}
       <FormField label="password" name="password" id="password" type="password" {...register('password', { required: true })} />
       {errors.password && <span>Password is required</span>}
-      <Button type="submit">Sign up</Button>
+      <Button type="submit">Sign in</Button>
     </form>
   );
 };
