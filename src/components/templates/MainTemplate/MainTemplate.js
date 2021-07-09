@@ -3,6 +3,7 @@ import Navbar from 'components/organisms/Navbar/Navbar';
 import { Wrapper } from 'components/templates/MainTemplate/MainTemplate.styles';
 import { SearchBar } from 'components/organisms/SearchBar/SearchBar';
 import NewsSection from 'components/templates/NewsSection/NewsSection';
+import NotesWidget from 'components/organisms/NotesWidget/NotesWidget';
 
 const MainTemplate = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ const MainTemplate = ({ children }) => {
       <SearchBar />
       {children}
       <NewsSection />
+      <NotesWidget />
     </Wrapper>
   );
 };
