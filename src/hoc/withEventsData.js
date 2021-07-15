@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Title } from 'components/atoms/Title/Title';
+import { StyledAverage } from 'components/atoms/Average/Average.styles';
 
 const withEventsData = (WrappedComponent, group) => {
   return function WithEventsDataWrapper() {
@@ -26,6 +27,21 @@ export const Wrapper = styled.div`
 
 const StyledEvents = styled.div`
   color: ${({ theme }) => theme.colors.darkGrey};
+  display: flex;
+`;
+
+const StyledIndex = styled(StyledAverage)`
+  background-color: ${({ theme }) => theme.colors.darkGrey};
+  width: 45px;
+  height: 45px;
+  font-size: ${({ theme }) => theme.fontSize.l};
+  margin-top: 20px;
+  color: ${({ theme }) => theme.colors.white};
+  width: 45px;
+`;
+
+const StyledEvent = styled.div`
+  margin-left: 40px;
 `;
 
 const StyledTitle = styled.h3`
@@ -41,11 +57,14 @@ export const DisplayEvents = ({ events, group }) => {
     <Wrapper>
       <Title>Group {group} events</Title>
       {console.log(events)}
-      {events.map(({ id, type, group, subject, date }, index) => {
+      {events.map(({ id, type, subject, date }, index) => {
         return (
-          <StyledEvents>
-            <StyledTitle key={id}>{index + 1 + '. ' + subject.toUpperCase()}</StyledTitle>
-            <StyledInfo key={id}>{type.charAt(0).toUpperCase() + type.slice(1) + ', ' + date.slice(0, 10) + ' ' + date.slice(12, 16)}</StyledInfo>
+          <StyledEvents key={id}>
+            <StyledIndex>{index + 1 + '.'}</StyledIndex>
+            <StyledEvent>
+              <StyledTitle>{subject.toUpperCase()}</StyledTitle>
+              <StyledInfo>{type.charAt(0).toUpperCase() + type.slice(1) + ', ' + date.slice(0, 10) + ' ' + date.slice(12, 16)}</StyledInfo>
+            </StyledEvent>
           </StyledEvents>
         );
       })}

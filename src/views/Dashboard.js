@@ -49,7 +49,9 @@ const Dashboard = () => {
           ))}
         </nav>
       </TitleWrapper>
-      <Button onClick={handleOpenEvents}>Events</Button>
+      <Button isEvents onClick={handleOpenEvents}>
+        Show events
+      </Button>
       <GroupWrapper>
         <StudentsList handleOpenStudentDetails={handleOpenStudentDetails} />
         <Modal isOpen={isOpen} handleClose={handleCloseModal}>
@@ -57,7 +59,7 @@ const Dashboard = () => {
         </Modal>
       </GroupWrapper>
       <Modal isOpen={isOpenEvents} handleClose={handleCloseEventsModal}>
-        <DispalyEventsData />
+        <EventsProvider group={id}>{(props) => <DisplayEvents events={props} group={id} />}</EventsProvider>
       </Modal>
     </Wrapper>
   );
